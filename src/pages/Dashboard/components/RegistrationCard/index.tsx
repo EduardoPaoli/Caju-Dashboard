@@ -29,7 +29,7 @@ const RegistrationCard = (props: Props) => {
       <S.Actions>
         <ButtonSmall bgcolor="rgb(255, 145, 154)" >Reprovar</ButtonSmall>
         <ButtonSmall bgcolor="rgb(155, 229, 155)">Aprovar</ButtonSmall>
-        <ButtonSmall bgcolor="#ff8858">Revisar novamente</ButtonSmall>
+        <ButtonSmall bgcolor="#ff8858">Revisar</ButtonSmall>
 
         <HiOutlineTrash />
       </S.Actions>

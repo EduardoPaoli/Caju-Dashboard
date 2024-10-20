@@ -23,6 +23,14 @@
       "employeeName": "José Leão",
       "status": "REPROVED",
       "cpf": "78502270001"
+    },
+    {
+      "id": "8ebee2c1-60c4-412b-8874-363c9f35331d",
+      "admissionDate": "1994-11-13",
+      "email": "epaoli@avenuecode.com",
+      "employeeName": "Eduardo Lucas Paoli",
+      "status": "REVIEW",
+      "cpf": "126.085.866-94"
     }
   ]
 }
