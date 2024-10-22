@@ -1,10 +1,11 @@
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
+import { Status } from "~/Interface/Admissions";
 
 const allColumns = [
-  { status: "REVIEW", title: "Revisar" },
-  { status: "APPROVED", title: "Aprovado" },
-  { status: "REPROVED", title: "Reprovado" },
+  { status: Status.REVIEW, title: "Revisar" },
+  { status: Status.APPROVED, title: "Aprovado" },
+  { status: Status.REPROVED, title: "Reprovado" },
 ];
 
 type Props = {

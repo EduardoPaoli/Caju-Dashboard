@@ -6,7 +6,9 @@ import { IconButton } from "~/components/Buttons/IconButton";
 import { useHistory } from "react-router-dom";
 import routes from "~/router/routes";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { postAdmissions } from "~/api/Admissions";
+import { useMutation } from "@tanstack/react-query";
+import { Status } from "~/Interface/Admissions";
 
 const NewUserPage = () => {
   const {
@@ -20,23 +22,17 @@ const NewUserPage = () => {
     history.push(routes.dashboard);
   };
 
-  const onSubmit = (data:any) => {
-    const URL = `http://localhost:3000/registrations`;
-    axios
-      .post(URL, {
-        id: self.crypto.randomUUID(),
-        admissionDate: data.date,
-        email: data.email,
-        employeeName: data.name,
-        status: "REVIEW",
-        cpf: data.cpf,
-      })
-      .then((resp) => {
-        console.log(resp.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const { mutate } = useMutation({mutationFn: postAdmissions});
+
+  const onSubmit = (data: any) => {
+    mutate({
+      id: self.crypto.randomUUID(),
+      admissionDate: data.date,
+      email: data.email,
+      employeeName: data.name,
+      status: Status.REVIEW,
+      cpf: data.cpf
+    });
   };
 
   return (

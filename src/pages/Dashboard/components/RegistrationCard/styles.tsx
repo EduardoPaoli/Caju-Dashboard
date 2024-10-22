@@ -13,7 +13,7 @@ export const Card = styled.div`
   p {
     margin: 0;
   }
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 export const IconAndText = styled.div`
@@ -25,11 +25,15 @@ export const IconAndText = styled.div`
 export const Actions = styled.div`
   margin-top: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 4px;
 
   svg {
     cursor: pointer;
   }
+`;
+
+export const DeleteButton = styled.button`
+  background: transparent;
+  border: 0;
+  margin-left: auto;
 `;

@@ -21,9 +21,9 @@ export const Input = styled.input`
   }
 `;
 type Props = {
-  label: string;
+  label?: string;
   error?: any;
-  id: string;
+  id?: string;
   type?: string;
   placeholder?: string;
   register?: any
@@ -35,13 +35,14 @@ const TextField = ({
   id,
   type = "text",
   placeholder,
-  register
+  register,
+  ...rest
 }: Props) => {
 
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <Input type={type} placeholder={placeholder} {...register} />
+      <Input type={type} placeholder={placeholder} {...register} {...rest}/>
       {error && <span style={{fontSize: 12, color: 'red'}}>{error}</span>}
     </div>
   );

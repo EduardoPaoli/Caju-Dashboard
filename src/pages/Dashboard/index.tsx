@@ -1,25 +1,28 @@
 import Collumns from "./components/Columns";
 import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { fetchAdmissions, fetchAdmissionsByCpf } from "~/api/Admissions";
+import { useSearch } from "~/hooks/useSearch";
 
 const DashboardPage = () => {
-  const [registrations, setRegistrations] = useState()
+  const { searchValue } = useSearch();
 
-  const URL = `http://localhost:3000/registrations`;
-  useEffect(() => {
-    axios.get(URL).then(res => {
-      setRegistrations(res.data)
-    }).catch(() => {
-      console.error('failed fetch')
-    })
-  }, [])
+  const { data } = useQuery({
+    queryKey: ["admissions"],
+    queryFn: fetchAdmissions,
+  });
+
+  const { data: dataFilter } = useQuery({
+    queryKey: ["admissionsByFilter", searchValue],
+    queryFn: () => fetchAdmissionsByCpf(searchValue),
+    enabled: searchValue.length === 11
+  });
 
   return (
     <S.Container>
       <SearchBar />
-      <Collumns registrations={registrations} />
+      <Collumns registrations={searchValue.length !== 11 ? data : dataFilter} />
     </S.Container>
   );
 };
