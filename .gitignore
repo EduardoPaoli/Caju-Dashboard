@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+.eslintcache
+yarn.lock
+package-lock.json
+.env
 
 # Editor directories and files
 .vscode/*
