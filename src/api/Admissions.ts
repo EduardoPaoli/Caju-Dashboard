@@ -1,5 +1,5 @@
 import axios, { isAxiosError } from "axios";
-import { AdmissionData, AdmissionStatus } from "~/Interface/Admissions";
+import { AdmissionData } from "~/Interface/Admissions";
 
 const API = "http://localhost:3000";
 const API_URL = `${API}/registrations/`;
@@ -13,7 +13,7 @@ export const fetchAdmissions = async () => {
   }
 };
 
-export const postAdmissions = async (data: any) => {
+export const postAdmissions = async (data: AdmissionData) => {
   try {
     const response = await axios.post(API_URL, data);
     return response.data;

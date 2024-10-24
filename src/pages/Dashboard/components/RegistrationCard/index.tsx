@@ -9,7 +9,8 @@ import {
 } from "react-icons/hi";
 import { patchAdmissions, deleteAdmissions } from "~/api/Admissions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { AdmissionData, AdmissionStatus, Status } from "~/Interface/Admissions";
+import { AdmissionData, Status } from "~/Interface/Admissions";
+import { formatDate } from "~/utils/format";
 
 interface Props {
   data: AdmissionData;
@@ -57,7 +58,7 @@ const RegistrationCard = (props: Props) => {
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineCalendar />
-        <span>{admissionDate}</span>
+        <span>{formatDate(admissionDate)}</span>
       </S.IconAndText>
       <S.Actions>
         {status !== Status.REPROVED ? (

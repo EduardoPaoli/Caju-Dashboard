@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
+import InputMask from "react-input-mask";
 
 export const Input = styled.input`
   padding: 0 8px;
@@ -26,7 +27,8 @@ type Props = {
   id?: string;
   type?: string;
   placeholder?: string;
-  register?: any
+  mask?: string;
+  register?: any;
 } & InputHTMLAttributes<any>;
 
 const TextField = ({
@@ -36,14 +38,26 @@ const TextField = ({
   type = "text",
   placeholder,
   register,
+  mask,
   ...rest
 }: Props) => {
-
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <Input type={type} placeholder={placeholder} {...register} {...rest}/>
-      {error && <span style={{fontSize: 12, color: 'red'}}>{error}</span>}
+      {!mask ? (
+        <Input type={type} placeholder={placeholder} {...register} {...rest} />
+      ) : null}
+      {mask ? (
+        <InputMask
+          mask={mask}
+          placeholder={placeholder}
+          {...register}
+          {...rest}
+        >
+          {(inputProps: any) => <Input type={type} {...inputProps} />}
+        </InputMask>
+      ) : null}
+      {error && <span style={{ fontSize: 12, color: "red" }}>{error}</span>}
     </div>
   );
 };

@@ -34,3 +34,7 @@ export const Card = styled.div`
     align-self: flex-end;
   }
 `;
+
+export const ErrorText = styled.p`
+  color: red;
+`;

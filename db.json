@@ -1,52 +1,20 @@
 {
   "registrations": [
     {
-      "id": "1",
-      "admissionDate": "22/10/2023",
-      "email": "filipe@caju.com.br",
-      "employeeName": "Filipe Marins",
-      "status": "REVIEW",
-      "cpf": "78502270001"
-    },
-    {
-      "id": "2",
-      "admissionDate": "22/10/2023",
-      "email": "jose@caju.com.br",
-      "employeeName": "José Leão",
-      "status": "REVIEW",
-      "cpf": "78502270001"
-    },
-    {
-      "id": "8ebee2c1-60c4-412b-8874-363c9f35331d",
+      "id": "4217f1ac-5516-41f1-bc0d-06e5298b3c94",
       "admissionDate": "1994-11-13",
-      "email": "epaoli@avenuecode.com",
-      "employeeName": "Eduardo Lucas Paoli",
-      "status": "REPROVED",
-      "cpf": "126.085.866-94"
-    },
-    {
-      "id": "96de08dc-aedd-4907-bfaa-2804b79c7b59",
-      "admissionDate": "1111-11-11",
-      "email": "epaoli+6@fanatics.com",
-      "employeeName": "BH Festival",
-      "status": "APPROVED",
-      "cpf": "126.085.866-94"
-    },
-    {
-      "id": "8172b123-bdd4-47c7-a5d6-606c84731a08",
-      "admissionDate": "1111-11-11",
       "email": "r0dclkrq5r@mailcurity.com",
       "employeeName": "Crefisa",
       "status": "APPROVED",
-      "cpf": "126.085.866-94"
+      "cpf": "12608586694"
     },
     {
-      "id": "b5208259-803a-433a-8d34-2618194d7ff3",
+      "id": "29011302-f050-4f33-a4d1-eed9fcd9ffee",
       "admissionDate": "1111-11-11",
-      "email": "epaoli+6@fanatics.com",
-      "employeeName": "Rock in Rio",
-      "status": "APPROVED",
-      "cpf": "126.085.866-94"
+      "email": "epaoli@avenuecode.com",
+      "employeeName": "Eduardo Lucas Paoli",
+      "status": "REVIEW",
+      "cpf": "12608586694"
     }
   ]
 }
