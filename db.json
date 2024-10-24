@@ -1,20 +1,3 @@
 {
-  "registrations": [
-    {
-      "id": "4217f1ac-5516-41f1-bc0d-06e5298b3c94",
-      "admissionDate": "1994-11-13",
-      "email": "r0dclkrq5r@mailcurity.com",
-      "employeeName": "Crefisa",
-      "status": "APPROVED",
-      "cpf": "12608586694"
-    },
-    {
-      "id": "29011302-f050-4f33-a4d1-eed9fcd9ffee",
-      "admissionDate": "1111-11-11",
-      "email": "epaoli@avenuecode.com",
-      "employeeName": "Eduardo Lucas Paoli",
-      "status": "REVIEW",
-      "cpf": "12608586694"
-    }
-  ]
+  "registrations": []
 }
