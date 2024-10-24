@@ -5,9 +5,10 @@ import { IconButton } from "~/components/Buttons/IconButton";
 import TextField from "~/components/TextField";
 import routes from "~/router/routes";
 import * as S from "./styles";
-import { SetStateAction, useCallback } from "react";
+import { useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSearch } from "~/hooks/useSearch";
+import { formatCPF } from "~/utils/format";
 
 export const SearchBar = () => {
   const history = useHistory();
@@ -23,8 +24,9 @@ export const SearchBar = () => {
     queryClient.refetchQueries({ queryKey: ["admissions"] });
   }, [queryClient]);
 
-  const handleInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
-    setSearchValue(e.target.value);
+  const handleInputChange = (e: { target: { value: string }; }) => {
+    const formatedCPF = formatCPF(e.target.value)
+    setSearchValue(formatedCPF);
   };
 
   return (
@@ -32,6 +34,7 @@ export const SearchBar = () => {
       <TextField
         placeholder="Digite um CPF válido"
         onChange={handleInputChange}
+        mask="999.999.999-99"
       />
       <S.Actions>
         <IconButton aria-label="refetch" onClick={reload}>
