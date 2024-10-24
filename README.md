@@ -11,112 +11,28 @@ A tela de `Cadastro` exibe um formulário simples que será utilizado para criar
 
 ![Screenshot 2024-06-11 at 11 48 47 AM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/bbbb211c-165f-40e5-b2af-61adafd61398)
 
-## Apresentanção do problema
-
-O desafio é aprimorar o código existente e implementar as funcionalidades que estão incompletas, use a sua experiência para identificar e propor soluções para os problemas encontrados.
-Sinta-se a vontade para refatorar, criar novas pastas, componentes, hooks, utils e o que mais achar necessário para garantir que o projeto esteja organizado e segue as boas práticas de desenvolvimento.
-
-
-## Especificações
-
-### Tela Dashboard
-  
-- Implementar `GET` ao carregar a pagina e ao fazer pequisa por `CPF`
-- Filtrar os cards por coluna, usando o status.
-- Implementar `PUT` ao clicar em Reprovar e alterar o status para `REPROVED`
-- Implementar `PUT` ao clicar em Aprovar e alterar o status para `APPROVED`
-- Implementar `PUT` ao clicar em Revisar novamente e alterar o status para `REVIEW`
-- Implementar `DELETE` ao clicar no lixeira no card.
-- O botão de `Reprovar` e `Aprovar` só deve aparecer em admissões com o status `REVIEW` 
-- O botão `Revisar novamente` só deve aparecer em admissões com o status `REPROVED` ou `APPROVED`
-- Implementar um loading na tela ao realizar requisições.
-- Todas as ações devem ter modal de confirmação e uma notificação de sucesso ou erro
-- Na pesquisa por CPF realizar a requisição automaticamente ao preencher um CPF válido
-- Adicionar máscara de CPF no campo de pesquisa.
-- Atualizar os dados (refetch) ao clicar no ícone de atualizar
-
-
-### Tela Cadastro
-
-- Implementar validação no campo de `email` para que aceite apenas emails válidos
-- Implementar validação no campo `nome completo` para que aceite pelo menos um espaço, no mínimo duas letras, e que a primeira letra não seja um número.
-- Implementar validação no campo CPF para aceitar apenas CPFs válidos e adicionar uma máscara de CPF ao campo.
-- Implementar `POST` ao preencher todos os campos corretamentes.
-- Redirecionar ao `/dashboard` ao criar uma nova admissão.
-
-
-## API
-Você consumirá uma API mockada localmente, que será executada utilizando o json-server. Para mais informações consulte a [documentação](https://github.com/typicode/json-server/).
-
-Exemplo de Requisição:
-
-```
-POST http://localhost:3000/registrations
-Content-Type: application/json
-{
-  "admissionDate": "23/10/2023",
-  "email": "maria@caju.com.br",
-  "employeeName": "Maria Silva",
-  "status": "REVIEW",
-  "cpf": "12345678901"
-}
-```
-
-Para realizar a pesquisa por CPF, utilize essa funcionalidade do json-web-server:
-<br/>
-https://github.com/typicode/json-server/tree/v0?tab=readme-ov-file#filter
-
-
-## Extras (opcional)
-
-- Testes Unitários e de Integração `(Obrigátorio para Senior e Tech Lead)`
-- End-to-End (E2E) 
-- Configuração de CI/CD com deploy automatizado
-
-## Dicas e sugestões
-
-- Faça bom uso da componentização
-- Garanta que a aplicação é performática
-- Faça bom uso do HTML e WAI-ARIA
-- Garanta uma experiência fluida e acessível
-- Utilize conceitos (SOLID, DRY, KISS, Clean code) e design patterns
-- Crie testes coesos e que garantam o bom funcionamento da aplicação
-
-### Sua performance será avaliada com base nos seguintes pontos:
-
-- A aplicação funciona conforme o esperado seguindo todas as especificações
-- O código é claro e de fácil entendimento
-- Conhecimento em HTML, CSS, JavaScript / TypeScript e React
-- Experiência do usuário
-- Arquitetura (conceitos, patterns, algoritmos, forma como os problemas foram solucionados)
-- Boas práticas de desenvolvimento
-- Proeficiência com automação de testes. Não exigimos 100% de cobertura
-- Senso crítico e analítico
-
-`Nos surpreenda demonstrando toda a sua habilidade e conhecimento.`
-
-## Iniciando o desenvolvimento
-
-Realize o clone do repositório e instale as dependências
+## Configuração
 
 ```shell
-git clone https://github.com/caju-beneficios/caju-front-teste-1.git
-cd caju-front-test-1
-```
-
-```shell
+npm install
+# ou
 yarn install
+
 ```
 
 Inicie o servidor do Json Web Server para consumir a API
 
 ```shell
+npm init:db
+# ou
 yarn init:db
 ```
 
 Execute a aplicação
 
 ```shell
+npm run dev
+# ou
 yarn dev
 ```
 
@@ -125,14 +41,49 @@ Se tudo ocorreu bem os seguintes serviços estarão disponiveis em:
 
 Aplicação http://localhost:3001/
 <br/>
+
+## Servidor JSON
+```bash
+npm run json-server
+# ou
+yarn json-server
+```
 Json Web Server http://localhost:3000/
 
+## Testes
 Caso necessite executar a suíte de testes use o comando abaixo:
 
 ```shell
+npm run test:dev
+# ou
 yarn test:dev
 ```
 
+## Estrutura do Projeto
+O projeto está organizado da seguinte forma:
+```bash 
+public
+src
+├── api
+├── components
+├── const
+├── hooks
+├── interface
+├── page
+│ ├── Dashboard
+│ ├── NewUser
+├── router
+├── utils
+├── page
+```
 
-Para concluir o desenvolvimento faça as edições necessárias e depois envie a URL do novo repositório com suas alterações para o RH.
+## Tecnologias Utilizadas
+- React: Library para desenvolvimento web.
+- TypeScript: Linguagem de programação que é um superconjunto de JavaScript.
+- React Hook Forms: Biblioteca para criação de formulários em React.
+- React Query: Biblioteca para gerenciamento de estado de dados assíncronos em React, como requisições de dados de APIs
+- React input mask: Biblioteca para adicionar máscaras em inputs
+- JSON Server: Ferramenta para criar um servidor REST simulado utilizando um arquivo JSON.
+- Testing Library: Conjunto de ferramentas para teste de interfaces de usuário.
+- Jest: Framework de testes em JavaScript.
 
