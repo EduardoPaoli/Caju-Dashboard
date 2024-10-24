@@ -1,11 +1,7 @@
 
-# Caju Front End Teste
-
-Esse é um desafio técnico para você demonstrar suas habilidades como frontend, sua missão será dar continuidade ao desenvolvimento da plataforma de admissão que consiste em duas telas, a tela de `Dashboard` e uma tela de `Cadastro`.
+# Dashboard
 
 O `Dashboard` mostra todas as admissões criadas, com as opções de aprovar, reprovar e excluir.
-
-![Screenshot 2024-06-11 at 11 48 24 AM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/fedeff5c-a0d3-4df1-aebd-1f2d25c56a48)
 
 Dashboard com a listagem das admissões.
 
