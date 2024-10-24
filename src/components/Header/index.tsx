@@ -13,9 +13,11 @@ export const Header = styled.header`
   top: 0;
   display: flex;
   align-items: center;
-  padding:0px 24px;
+  justify-content: center;
+  padding: 0px 24px;
 
   h1 {
+    display: none;
     color: #fff;
     font-size: 24px;
   }
