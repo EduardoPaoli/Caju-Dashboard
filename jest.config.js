@@ -1,4 +1,4 @@
-/** @type {import('jest').Config} */
+// /** @type {import('jest').Config} */
 export default {
   verbose: true,
   preset: "ts-jest",
@@ -10,5 +10,5 @@ export default {
   moduleNameMapper: {
     "^~/(.+)": "<rootDir>/src/$1",
   },
-//   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 };
